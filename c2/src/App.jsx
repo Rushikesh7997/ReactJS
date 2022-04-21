@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { AddStudent } from "./components/AddStudent";
+import { ShowStudents } from "./components/ShowStudents";
+import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload rishi.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="togglebtn">Add a new student</button>
+      <ShowStudents></ShowStudents>
+
+      {/* Show either  AddStudent component or ShowStudents dependeing on the above button click  */}
+      {/* make sure the table is shown initially, do not show form initially */}
+      {/* make sure to show either of them do not both together */}
     </div>
   );
 }
