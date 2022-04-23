@@ -1,0 +1,9 @@
+.category{
+    height: 150px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+
+}
