@@ -1,13 +1,16 @@
+import { useState } from "react";
 import "./App.css";
 import { Category } from "./components/category";
 
 function App() {
+  const [counter, setCounter] = useState(10);
+
   return (
     <div className="App">
-      <h3>Counter: 0</h3>
+      <h3>Counter: {counter}</h3>
       <button
         onClick={() => {
-          console.log("Clicked");
+          setCounter(counter+1);
         }}
       >
         Add 1
