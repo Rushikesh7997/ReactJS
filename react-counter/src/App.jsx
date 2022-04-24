@@ -2,6 +2,23 @@ import "./App.css";
 import { Category } from "./components/category";
 
 function App() {
+  return (
+    <div className="App">
+      <h3>Counter: 0</h3>
+      <button
+        onClick={() => {
+          console.log("Clicked");
+        }}
+      >
+        Add 1
+      </button>
+    </div>
+  );
+}
+export default App;
+
+/* 
+function App() {
   const navbar = [
     {
       image:
@@ -25,9 +42,7 @@ function App() {
   );
 }
 export default App;
-
-// https://github.com/ankushchimnani/DSA-Must-Do-Questions  
-
+ */
 
 
 
