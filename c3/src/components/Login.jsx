@@ -1,21 +1,44 @@
-export const Login = () => {
-  //  use reqres to log user in.
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+function Login() {
+    const [email, setEmail] = useState("")
+    const [pass, setPass] = useState("")
+
+    useEffect(() =>{
+       
+    }, [])
+
+    function login() {
+         axios
+           .post("https://reqres.in/api/login", {
+             email: email,
+             password: pass,
+           })
+           .then((response) => {
+             console.log(response);
+           });
+    }
 
   return (
-    <form className="loginform">
+    <div>
       <input
-        name="username"
         type="text"
-        placeholder="Enter username"
-        className="login_username"
+        placeholder="Enter your username"
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
       />
       <input
-        name="password"
         type="text"
-        placeholder="Enter password"
-        className="login_password"
-      />
-      <input type="submit" value="SIGN IN" className="login_submit" />
-    </form>
+        placeholder="Enter your password"
+        onChange={(e) => {
+          setPass(e.target.value);
+        }}
+          />
+          <button onClick={() =>{login()}}>Login</button>
+    </div>
   );
-};
+}
+
+export default Login

@@ -1,4 +1,17 @@
-export const Home = () => {
+import axios from "axios";
+import {useEffect, useState} from "react";
+import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
+  export const Home = () => {
+    const {cart}=useContext(CartContext);
+    const[stats,setStats]=useState({})
+  
+    useEffect(()=>{
+      axios.get("http://localhost:8080/employee").then(({data})=>{
+        setStats(data)
+      })
+    },[])
+    console.log(stats)
   // create statistics for user.
   // get Total user count from DB,
   // other fields are in memory values stored in context API.
