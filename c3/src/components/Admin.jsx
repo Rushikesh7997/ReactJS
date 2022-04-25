@@ -1,12 +1,11 @@
-export const Admin = () => {
 
-  export const Admin = () => {
+export const Admin = () => {
     const [formData,setFromData] = useState({
      
       
 
     });
-  }
+  
 
 
   return (
