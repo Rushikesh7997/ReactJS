@@ -1,8 +1,8 @@
-import {useEffect, usestate} from "react";
+// import {useEffect, usestate} from "react";
 import {EmployeeContext} from "../context/Auth"
 import { useContext } from "react";
-import {Link} from "react-router-dom"
-import{ useParams} from "react-router-dom"
+// import {Link} from "react-router-dom"
+// import{ useParams} from "react-router-dom"
 
 
 export const EmployeeList = () => {

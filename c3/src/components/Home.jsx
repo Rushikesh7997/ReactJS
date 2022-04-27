@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
-import { CartContext } from "../contexts/CartContext";
+// import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
   export const Home = () => {
     const {cart}=useContext(CartContext);

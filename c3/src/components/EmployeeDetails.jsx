@@ -1,7 +1,7 @@
 import { useEffect, usestate, useContext, useState } from "react";
-import { useParams } from "react-router-dom";
-import {loginContext} from "./context/loginContext"
-import {Navigate} from "react-router-dom"
+// import { useParams } from "react-router-dom";
+// import {loginContext} from "../context/loginContext"
+// import {Navigate} from "react-router-dom"
 
 export const EmployeeDetails = () => {
   const [emp,setEmp]=usestate({});
