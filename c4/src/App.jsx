@@ -4,10 +4,11 @@ import { Logout } from "./components/Logout";
 import { NewOrder } from "./components/NewOrder";
 import { Orders } from "./components/Orders";
 import { ProtectedRoute } from "./components/ProtextedRoute";
-import { Link,BrowserRouter } from "react-router-dom";
-import {Routes,Route} from "react-router-dom"
+import {Link,Routes,Route} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 
 function App() {
+  const isAuth=useSelector((store)=>store.login);
   return (
     <div className="App">
       <div>
@@ -15,28 +16,47 @@ function App() {
           Home
         </Link>
         {/* Show either login or logout below */}
-        <Link className="nav-logout" to="/logout">
-          Logout
+        {isAuth ?(
+          <Link className="nav-logout" to="/logout">
+          Logout  
         </Link>
-        <Link className="nav-login" to="/login">
+        ):(
+          <Link className="nav-login" to="/login">
           Login
         </Link>
+        )}
+        
+        
       </div>
 
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/Login" element={<Login/>}></Route>
-        <Route path="/Logout" element={<Logout/>}></Route>
-        <Route path="/orders" element={
+        {/* Routes are as follows:
+        Route      Component
+        /           Home
+        /login      Login
+        /logout     Logout
+        /orders     Orders    Protected
+        /neworder   NewOrder  Protected
+        */}
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/logout" element={<Logout></Logout>}></Route>
+        <Route 
+        path="/orders"
+        element={
           <ProtectedRoute>
             <Orders></Orders>
-          </ProtectedRoute>  
-        }></Route>
-        <Route path="/newOrder" element={
-        <ProtectedRoute>
+          </ProtectedRoute>
+        }
+        ></Route>
+         <Route 
+        path="/neworder"
+        element={
+          <ProtectedRoute>
             <Orders></Orders>
-        </ProtectedRoute>  
-        }></Route>
+          </ProtectedRoute>
+        }
+        ></Route>
       </Routes>
     </div>
   );
