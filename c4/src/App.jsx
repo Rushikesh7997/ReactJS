@@ -4,6 +4,8 @@ import { Logout } from "./components/Logout";
 import { NewOrder } from "./components/NewOrder";
 import { Orders } from "./components/Orders";
 import { ProtectedRoute } from "./components/ProtextedRoute";
+import { Link,BrowserRouter } from "react-router-dom";
+import {Routes,Route} from "react-router-dom"
 
 function App() {
   return (
@@ -22,14 +24,11 @@ function App() {
       </div>
 
       <Routes>
-        {/* Routes are as follows:
-        Route      Component
-        /           Home
-        /login      Login
-        /logout     Logout
-        /orders     Orders    Protected
-        /neworder   NewOrder  Protected
-        */}
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/Login" element={<Login/>}></Route>
+        <Route path="/Logout" element={<Logout/>}></Route>
+        <Route path="/orders" element={<Orders/>}></Route>
+        <Route path="/newOrder" element={<NewOrder/>}></Route>
       </Routes>
     </div>
   );
