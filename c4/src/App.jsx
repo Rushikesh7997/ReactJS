@@ -27,8 +27,16 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/Login" element={<Login/>}></Route>
         <Route path="/Logout" element={<Logout/>}></Route>
-        <Route path="/orders" element={<Orders/>}></Route>
-        <Route path="/newOrder" element={<NewOrder/>}></Route>
+        <Route path="/orders" element={
+          <ProtectedRoute>
+            <Orders></Orders>
+          </ProtectedRoute>  
+        }></Route>
+        <Route path="/newOrder" element={
+        <ProtectedRoute>
+            <Orders></Orders>
+        </ProtectedRoute>  
+        }></Route>
       </Routes>
     </div>
   );

@@ -11,7 +11,7 @@ export const Logout = () => {
   const isAuth = useSelector((store) => store.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  dispatch(logIn(dalse));
+  dispatch(logIn(false));
   navigate("/");
   return <></>;
 };
